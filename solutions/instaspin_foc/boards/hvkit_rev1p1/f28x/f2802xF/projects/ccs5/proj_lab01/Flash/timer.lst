@@ -1,0 +1,881 @@
+TMS320C2000 Assembler PC v6.4.9 Wed Dec 02 15:59:09 2015
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\ywcheng\AppData\Local\Temp\1188010                          PAGE    1
+
+       1              ;***************************************************************
+       2              ;* TMS320C2000 C/C++ Codegen                         PC v6.4.9 *
+       3              ;* Date/Time created: Wed Dec 02 15:59:09 2015                 *
+       4              ;***************************************************************
+       5                      .compiler_opts --float_support=softlib --hll_source=on --mem_model:code=flat --mem_model:data=large -
+       6        0002  FP      .set    XAR2
+       7              
+       8              $C$DW$CU        .dwtag  DW_TAG_compile_unit
+       9                      .dwattr $C$DW$CU, DW_AT_name("C:/ti/motorware/motorware_1_01_00_15/sw/drivers/timer/src/32b/f28x/f280
+      10                      .dwattr $C$DW$CU, DW_AT_producer("TI TMS320C2000 C/C++ Codegen PC v6.4.9 Copyright (c) 1996-2015 Texa
+      11                      .dwattr $C$DW$CU, DW_AT_TI_version(0x01)
+      12                      .dwattr $C$DW$CU, DW_AT_comp_dir("C:\ti\motorware\motorware_1_01_00_15\sw\solutions\instaspin_foc\boa
+      13              ;       C:\ti\ccsv6\tools\compiler\ti-cgt-c2000_6.4.9\bin\opt2000.exe C:\\Users\\ywcheng\\AppData\\Local\\Tem
+      14              ;       C:\ti\ccsv6\tools\compiler\ti-cgt-c2000_6.4.9\bin\ac2000.exe -@C:\\Users\\ywcheng\\AppData\\Local\\Te
+      15 00000000               .sect   ".text"
+      16                      .clink
+      17                      .global _TIMER_setPreScaler
+      18              
+      19              $C$DW$1 .dwtag  DW_TAG_subprogram, DW_AT_name("TIMER_setPreScaler")
+      20                      .dwattr $C$DW$1, DW_AT_low_pc(_TIMER_setPreScaler)
+      21                      .dwattr $C$DW$1, DW_AT_high_pc(0x00)
+      22                      .dwattr $C$DW$1, DW_AT_TI_symbol_name("_TIMER_setPreScaler")
+      23                      .dwattr $C$DW$1, DW_AT_external
+      24                      .dwattr $C$DW$1, DW_AT_TI_begin_file("C:/ti/motorware/motorware_1_01_00_15/sw/drivers/timer/src/32b/f
+      25                      .dwattr $C$DW$1, DW_AT_TI_begin_line(0x94)
+      26                      .dwattr $C$DW$1, DW_AT_TI_begin_column(0x06)
+      27                      .dwattr $C$DW$1, DW_AT_TI_max_frame_size(-2)
+      28                      .dwpsn  file "C:/ti/motorware/motorware_1_01_00_15/sw/drivers/timer/src/32b/f28x/f2802x/timer.c",line
+      29              
+      30                      .dwfde $C$DW$CIE, _TIMER_setPreScaler
+      31              $C$DW$2 .dwtag  DW_TAG_formal_parameter, DW_AT_name("timerHandle")
+      32                      .dwattr $C$DW$2, DW_AT_TI_symbol_name("_timerHandle")
+      33                      .dwattr $C$DW$2, DW_AT_type(*$C$DW$T$27)
+      34                      .dwattr $C$DW$2, DW_AT_location[DW_OP_reg12]
+      35              $C$DW$3 .dwtag  DW_TAG_formal_parameter, DW_AT_name("preScaler")
+      36                      .dwattr $C$DW$3, DW_AT_TI_symbol_name("_preScaler")
+      37                      .dwattr $C$DW$3, DW_AT_type(*$C$DW$T$42)
+      38                      .dwattr $C$DW$3, DW_AT_location[DW_OP_reg0]
+      39              
+      40              ;***************************************************************
+      41              ;* FNAME: _TIMER_setPreScaler           FR SIZE:   0           *
+      42              ;*                                                             *
+      43              ;* FUNCTION ENVIRONMENT                                        *
+      44              ;*                                                             *
+      45              ;* FUNCTION PROPERTIES                                         *
+      46              ;*                            0 Parameter,  0 Auto,  0 SOE     *
+      47              ;***************************************************************
+      48              
+      49              _TIMER_setPreScaler:
+      50              ;* AR4   assigned to _timerHandle
+      51              $C$DW$4 .dwtag  DW_TAG_variable, DW_AT_name("timerHandle")
+      52                      .dwattr $C$DW$4, DW_AT_TI_symbol_name("_timerHandle")
+      53                      .dwattr $C$DW$4, DW_AT_type(*$C$DW$T$34)
+      54                      .dwattr $C$DW$4, DW_AT_location[DW_OP_reg12]
+      55              ;* AR6   assigned to _preScaler
+TMS320C2000 Assembler PC v6.4.9 Wed Dec 02 15:59:09 2015
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\ywcheng\AppData\Local\Temp\1188010                          PAGE    2
+
+      56              $C$DW$5 .dwtag  DW_TAG_variable, DW_AT_name("preScaler")
+      57                      .dwattr $C$DW$5, DW_AT_TI_symbol_name("_preScaler")
+      58                      .dwattr $C$DW$5, DW_AT_type(*$C$DW$T$42)
+      59                      .dwattr $C$DW$5, DW_AT_location[DW_OP_reg16]
+      60                      .dwcfi  cfa_offset, -2
+      61                      .dwcfi  save_reg_to_mem, 26, 0
+      62 00000000 88A9          MOVZ      AR6,AL                ; [CPU_] |150| 
+      63 00000001 2901          CLRC      SXM                   ; [CPU_] 
+      64                      .dwpsn  file "C:/ti/motorware/motorware_1_01_00_15/sw/drivers/timer/src/32b/f28x/f2802x/timer.c",line
+      65 00000002 CDA6          AND       AH,AR6,#0xff00        ; [CPU_] |155| 
+         00000003 FF00 
+      66 00000004 5603          MOV       ACC,AH << 8           ; [CPU_] |155| 
+         00000005 08A8 
+      67 00000006 1EA7          MOVL      XAR7,ACC              ; [CPU_] |155| 
+      68 00000007 CCA6          AND       AL,AR6,#0x00ff        ; [CPU_] |155| 
+         00000008 00FF 
+      69 00000009 88A9          MOVZ      AR6,AL                ; [CPU_] |155| 
+      70 0000000a 06A7          MOVL      ACC,XAR7              ; [CPU_] |155| 
+      71 0000000b AFA6          OR        ACC,AR6               ; [CPU_] |155| 
+      72 0000000c 1EF4          MOVL      *+XAR4[6],ACC         ; [CPU_] |155| 
+      73              $C$DW$6 .dwtag  DW_TAG_TI_branch
+      74                      .dwattr $C$DW$6, DW_AT_low_pc(0x00)
+      75                      .dwattr $C$DW$6, DW_AT_TI_return
+      76 0000000d 0006          LRETR     ; [CPU_] 
+      77                      ; return occurs ; [] 
+      78                      .dwattr $C$DW$1, DW_AT_TI_end_file("C:/ti/motorware/motorware_1_01_00_15/sw/drivers/timer/src/32b/f28
+      79                      .dwattr $C$DW$1, DW_AT_TI_end_line(0x9f)
+      80                      .dwattr $C$DW$1, DW_AT_TI_end_column(0x01)
+      81                      .dwendentry
+      82                      .dwendtag $C$DW$1
+      83              
+      84 0000000e               .sect   ".text"
+      85                      .clink
+      86                      .global _TIMER_setEmulationMode
+      87              
+      88              $C$DW$7 .dwtag  DW_TAG_subprogram, DW_AT_name("TIMER_setEmulationMode")
+      89                      .dwattr $C$DW$7, DW_AT_low_pc(_TIMER_setEmulationMode)
+      90                      .dwattr $C$DW$7, DW_AT_high_pc(0x00)
+      91                      .dwattr $C$DW$7, DW_AT_TI_symbol_name("_TIMER_setEmulationMode")
+      92                      .dwattr $C$DW$7, DW_AT_external
+      93                      .dwattr $C$DW$7, DW_AT_TI_begin_file("C:/ti/motorware/motorware_1_01_00_15/sw/drivers/timer/src/32b/f
+      94                      .dwattr $C$DW$7, DW_AT_TI_begin_line(0x84)
+      95                      .dwattr $C$DW$7, DW_AT_TI_begin_column(0x06)
+      96                      .dwattr $C$DW$7, DW_AT_TI_max_frame_size(-2)
+      97                      .dwpsn  file "C:/ti/motorware/motorware_1_01_00_15/sw/drivers/timer/src/32b/f28x/f2802x/timer.c",line
+      98              
+      99                      .dwfde $C$DW$CIE, _TIMER_setEmulationMode
+     100              $C$DW$8 .dwtag  DW_TAG_formal_parameter, DW_AT_name("timerHandle")
+     101                      .dwattr $C$DW$8, DW_AT_TI_symbol_name("_timerHandle")
+     102                      .dwattr $C$DW$8, DW_AT_type(*$C$DW$T$27)
+     103                      .dwattr $C$DW$8, DW_AT_location[DW_OP_reg12]
+     104              $C$DW$9 .dwtag  DW_TAG_formal_parameter, DW_AT_name("mode")
+     105                      .dwattr $C$DW$9, DW_AT_TI_symbol_name("_mode")
+     106                      .dwattr $C$DW$9, DW_AT_type(*$C$DW$T$32)
+     107                      .dwattr $C$DW$9, DW_AT_location[DW_OP_reg0]
+TMS320C2000 Assembler PC v6.4.9 Wed Dec 02 15:59:09 2015
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\ywcheng\AppData\Local\Temp\1188010                          PAGE    3
+
+     108              
+     109              ;***************************************************************
+     110              ;* FNAME: _TIMER_setEmulationMode       FR SIZE:   0           *
+     111              ;*                                                             *
+     112              ;* FUNCTION ENVIRONMENT                                        *
+     113              ;*                                                             *
+     114              ;* FUNCTION PROPERTIES                                         *
+     115              ;*                            0 Parameter,  0 Auto,  0 SOE     *
+     116              ;***************************************************************
+     117              
+     118              _TIMER_setEmulationMode:
+     119              ;* AR4   assigned to _timerHandle
+     120              $C$DW$10        .dwtag  DW_TAG_variable, DW_AT_name("timerHandle")
+     121                      .dwattr $C$DW$10, DW_AT_TI_symbol_name("_timerHandle")
+     122                      .dwattr $C$DW$10, DW_AT_type(*$C$DW$T$34)
+     123                      .dwattr $C$DW$10, DW_AT_location[DW_OP_reg12]
+     124              ;* AL    assigned to _mode
+     125              $C$DW$11        .dwtag  DW_TAG_variable, DW_AT_name("mode")
+     126                      .dwattr $C$DW$11, DW_AT_TI_symbol_name("_mode")
+     127                      .dwattr $C$DW$11, DW_AT_type(*$C$DW$T$32)
+     128                      .dwattr $C$DW$11, DW_AT_location[DW_OP_reg0]
+     129                      .dwcfi  cfa_offset, -2
+     130                      .dwcfi  save_reg_to_mem, 26, 0
+     131                      .dwpsn  file "C:/ti/motorware/motorware_1_01_00_15/sw/drivers/timer/src/32b/f28x/f2802x/timer.c",line
+     132 0000000e 18E4          AND       *+XAR4[4],#0xf3ff     ; [CPU_] |139| 
+         0000000f F3FF 
+     133                      .dwpsn  file "C:/ti/motorware/motorware_1_01_00_15/sw/drivers/timer/src/32b/f28x/f2802x/timer.c",line
+     134 00000010 98E4          OR        *+XAR4[4],AL          ; [CPU_] |142| 
+     135              $C$DW$12        .dwtag  DW_TAG_TI_branch
+     136                      .dwattr $C$DW$12, DW_AT_low_pc(0x00)
+     137                      .dwattr $C$DW$12, DW_AT_TI_return
+     138 00000011 0006          LRETR     ; [CPU_] 
+     139                      ; return occurs ; [] 
+     140                      .dwattr $C$DW$7, DW_AT_TI_end_file("C:/ti/motorware/motorware_1_01_00_15/sw/drivers/timer/src/32b/f28
+     141                      .dwattr $C$DW$7, DW_AT_TI_end_line(0x91)
+     142                      .dwattr $C$DW$7, DW_AT_TI_end_column(0x01)
+     143                      .dwendentry
+     144                      .dwendtag $C$DW$7
+     145              
+     146 00000012               .sect   ".text"
+     147                      .clink
+     148                      .global _TIMER_setDecimationFactor
+     149              
+     150              $C$DW$13        .dwtag  DW_TAG_subprogram, DW_AT_name("TIMER_setDecimationFactor")
+     151                      .dwattr $C$DW$13, DW_AT_low_pc(_TIMER_setDecimationFactor)
+     152                      .dwattr $C$DW$13, DW_AT_high_pc(0x00)
+     153                      .dwattr $C$DW$13, DW_AT_TI_symbol_name("_TIMER_setDecimationFactor")
+     154                      .dwattr $C$DW$13, DW_AT_external
+     155                      .dwattr $C$DW$13, DW_AT_TI_begin_file("C:/ti/motorware/motorware_1_01_00_15/sw/drivers/timer/src/32b/
+     156                      .dwattr $C$DW$13, DW_AT_TI_begin_line(0x76)
+     157                      .dwattr $C$DW$13, DW_AT_TI_begin_column(0x06)
+     158                      .dwattr $C$DW$13, DW_AT_TI_max_frame_size(-2)
+     159                      .dwpsn  file "C:/ti/motorware/motorware_1_01_00_15/sw/drivers/timer/src/32b/f28x/f2802x/timer.c",line
+     160              
+     161                      .dwfde $C$DW$CIE, _TIMER_setDecimationFactor
+TMS320C2000 Assembler PC v6.4.9 Wed Dec 02 15:59:09 2015
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\ywcheng\AppData\Local\Temp\1188010                          PAGE    4
+
+     162              $C$DW$14        .dwtag  DW_TAG_formal_parameter, DW_AT_name("timerHandle")
+     163                      .dwattr $C$DW$14, DW_AT_TI_symbol_name("_timerHandle")
+     164                      .dwattr $C$DW$14, DW_AT_type(*$C$DW$T$27)
+     165                      .dwattr $C$DW$14, DW_AT_location[DW_OP_reg12]
+     166              $C$DW$15        .dwtag  DW_TAG_formal_parameter, DW_AT_name("decFactor")
+     167                      .dwattr $C$DW$15, DW_AT_TI_symbol_name("_decFactor")
+     168                      .dwattr $C$DW$15, DW_AT_type(*$C$DW$T$42)
+     169                      .dwattr $C$DW$15, DW_AT_location[DW_OP_reg0]
+     170              
+     171              ;***************************************************************
+     172              ;* FNAME: _TIMER_setDecimationFactor    FR SIZE:   0           *
+     173              ;*                                                             *
+     174              ;* FUNCTION ENVIRONMENT                                        *
+     175              ;*                                                             *
+     176              ;* FUNCTION PROPERTIES                                         *
+     177              ;*                            0 Parameter,  0 Auto,  0 SOE     *
+     178              ;***************************************************************
+     179              
+     180              _TIMER_setDecimationFactor:
+     181              ;* AR4   assigned to _timerHandle
+     182              $C$DW$16        .dwtag  DW_TAG_variable, DW_AT_name("timerHandle")
+     183                      .dwattr $C$DW$16, DW_AT_TI_symbol_name("_timerHandle")
+     184                      .dwattr $C$DW$16, DW_AT_type(*$C$DW$T$34)
+     185                      .dwattr $C$DW$16, DW_AT_location[DW_OP_reg12]
+     186              ;* AR6   assigned to _decFactor
+     187              $C$DW$17        .dwtag  DW_TAG_variable, DW_AT_name("decFactor")
+     188                      .dwattr $C$DW$17, DW_AT_TI_symbol_name("_decFactor")
+     189                      .dwattr $C$DW$17, DW_AT_type(*$C$DW$T$42)
+     190                      .dwattr $C$DW$17, DW_AT_location[DW_OP_reg16]
+     191                      .dwcfi  cfa_offset, -2
+     192                      .dwcfi  save_reg_to_mem, 26, 0
+     193 00000012 88A9          MOVZ      AR6,AL                ; [CPU_] |120| 
+     194 00000013 2901          CLRC      SXM                   ; [CPU_] 
+     195                      .dwpsn  file "C:/ti/motorware/motorware_1_01_00_15/sw/drivers/timer/src/32b/f28x/f2802x/timer.c",line
+     196 00000014 CDA6          AND       AH,AR6,#0xff00        ; [CPU_] |125| 
+         00000015 FF00 
+     197 00000016 5603          MOV       ACC,AH << 8           ; [CPU_] |125| 
+         00000017 08A8 
+     198 00000018 1EA7          MOVL      XAR7,ACC              ; [CPU_] |125| 
+     199 00000019 CCA6          AND       AL,AR6,#0x00ff        ; [CPU_] |125| 
+         0000001a 00FF 
+     200 0000001b 88A9          MOVZ      AR6,AL                ; [CPU_] |125| 
+     201 0000001c 06A7          MOVL      ACC,XAR7              ; [CPU_] |125| 
+     202 0000001d AFA6          OR        ACC,AR6               ; [CPU_] |125| 
+     203 0000001e 1EF4          MOVL      *+XAR4[6],ACC         ; [CPU_] |125| 
+     204              $C$DW$18        .dwtag  DW_TAG_TI_branch
+     205                      .dwattr $C$DW$18, DW_AT_low_pc(0x00)
+     206                      .dwattr $C$DW$18, DW_AT_TI_return
+     207 0000001f 0006          LRETR     ; [CPU_] 
+     208                      ; return occurs ; [] 
+     209                      .dwattr $C$DW$13, DW_AT_TI_end_file("C:/ti/motorware/motorware_1_01_00_15/sw/drivers/timer/src/32b/f2
+     210                      .dwattr $C$DW$13, DW_AT_TI_end_line(0x81)
+     211                      .dwattr $C$DW$13, DW_AT_TI_end_column(0x01)
+     212                      .dwendentry
+     213                      .dwendtag $C$DW$13
+TMS320C2000 Assembler PC v6.4.9 Wed Dec 02 15:59:09 2015
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\ywcheng\AppData\Local\Temp\1188010                          PAGE    5
+
+     214              
+     215 00000020               .sect   ".text"
+     216                      .clink
+     217                      .global _TIMER_init
+     218              
+     219              $C$DW$19        .dwtag  DW_TAG_subprogram, DW_AT_name("TIMER_init")
+     220                      .dwattr $C$DW$19, DW_AT_low_pc(_TIMER_init)
+     221                      .dwattr $C$DW$19, DW_AT_high_pc(0x00)
+     222                      .dwattr $C$DW$19, DW_AT_TI_symbol_name("_TIMER_init")
+     223                      .dwattr $C$DW$19, DW_AT_external
+     224                      .dwattr $C$DW$19, DW_AT_type(*$C$DW$T$27)
+     225                      .dwattr $C$DW$19, DW_AT_TI_begin_file("C:/ti/motorware/motorware_1_01_00_15/sw/drivers/timer/src/32b/
+     226                      .dwattr $C$DW$19, DW_AT_TI_begin_line(0x67)
+     227                      .dwattr $C$DW$19, DW_AT_TI_begin_column(0x0e)
+     228                      .dwattr $C$DW$19, DW_AT_TI_max_frame_size(-2)
+     229                      .dwpsn  file "C:/ti/motorware/motorware_1_01_00_15/sw/drivers/timer/src/32b/f28x/f2802x/timer.c",line
+     230              
+     231                      .dwfde $C$DW$CIE, _TIMER_init
+     232              $C$DW$20        .dwtag  DW_TAG_formal_parameter, DW_AT_name("pMemory")
+     233                      .dwattr $C$DW$20, DW_AT_TI_symbol_name("_pMemory")
+     234                      .dwattr $C$DW$20, DW_AT_type(*$C$DW$T$3)
+     235                      .dwattr $C$DW$20, DW_AT_location[DW_OP_reg12]
+     236              $C$DW$21        .dwtag  DW_TAG_formal_parameter, DW_AT_name("numBytes")
+     237                      .dwattr $C$DW$21, DW_AT_TI_symbol_name("_numBytes")
+     238                      .dwattr $C$DW$21, DW_AT_type(*$C$DW$T$36)
+     239                      .dwattr $C$DW$21, DW_AT_location[DW_OP_reg0]
+     240              
+     241              ;***************************************************************
+     242              ;* FNAME: _TIMER_init                   FR SIZE:   0           *
+     243              ;*                                                             *
+     244              ;* FUNCTION ENVIRONMENT                                        *
+     245              ;*                                                             *
+     246              ;* FUNCTION PROPERTIES                                         *
+     247              ;*                            0 Parameter,  0 Auto,  0 SOE     *
+     248              ;***************************************************************
+     249              
+     250              _TIMER_init:
+     251              ;* AR6   assigned to _numBytes
+     252              $C$DW$22        .dwtag  DW_TAG_variable, DW_AT_name("numBytes")
+     253                      .dwattr $C$DW$22, DW_AT_TI_symbol_name("_numBytes")
+     254                      .dwattr $C$DW$22, DW_AT_type(*$C$DW$T$36)
+     255                      .dwattr $C$DW$22, DW_AT_location[DW_OP_reg16]
+     256                      .dwcfi  cfa_offset, -2
+     257                      .dwcfi  save_reg_to_mem, 26, 0
+     258 00000020 1EA6          MOVL      XAR6,ACC              ; [CPU_] |104| 
+     259                      .dwpsn  file "C:/ti/motorware/motorware_1_01_00_15/sw/drivers/timer/src/32b/f28x/f2802x/timer.c",line
+     260 00000021 0208          MOVB      ACC,#8                ; [CPU_] |109| 
+     261 00000022 0FA6          CMPL      ACC,XAR6              ; [CPU_] |109| 
+     262 00000023 56C9          BF        $C$L1,LOS             ; [CPU_] |109| 
+         00000024 0003 
+     263                      ; branchcc occurs ; [] |109| 
+     264 00000025 D400          MOVB      XAR4,#0               ; [CPU_] |109| 
+     265              $C$L1:    
+     266              $C$DW$23        .dwtag  DW_TAG_TI_branch
+     267                      .dwattr $C$DW$23, DW_AT_low_pc(0x00)
+TMS320C2000 Assembler PC v6.4.9 Wed Dec 02 15:59:09 2015
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\ywcheng\AppData\Local\Temp\1188010                          PAGE    6
+
+     268                      .dwattr $C$DW$23, DW_AT_TI_return
+     269 00000026 0006          LRETR     ; [CPU_] 
+     270                      ; return occurs ; [] 
+     271                      .dwattr $C$DW$19, DW_AT_TI_end_file("C:/ti/motorware/motorware_1_01_00_15/sw/drivers/timer/src/32b/f2
+     272                      .dwattr $C$DW$19, DW_AT_TI_end_line(0x73)
+     273                      .dwattr $C$DW$19, DW_AT_TI_end_column(0x01)
+     274                      .dwendentry
+     275                      .dwendtag $C$DW$19
+     276              
+     277 00000027               .sect   ".text"
+     278                      .clink
+     279                      .global _TIMER_getStatus
+     280              
+     281              $C$DW$24        .dwtag  DW_TAG_subprogram, DW_AT_name("TIMER_getStatus")
+     282                      .dwattr $C$DW$24, DW_AT_low_pc(_TIMER_getStatus)
+     283                      .dwattr $C$DW$24, DW_AT_high_pc(0x00)
+     284                      .dwattr $C$DW$24, DW_AT_TI_symbol_name("_TIMER_getStatus")
+     285                      .dwattr $C$DW$24, DW_AT_external
+     286                      .dwattr $C$DW$24, DW_AT_type(*$C$DW$T$25)
+     287                      .dwattr $C$DW$24, DW_AT_TI_begin_file("C:/ti/motorware/motorware_1_01_00_15/sw/drivers/timer/src/32b/
+     288                      .dwattr $C$DW$24, DW_AT_TI_begin_line(0x5b)
+     289                      .dwattr $C$DW$24, DW_AT_TI_begin_column(0x10)
+     290                      .dwattr $C$DW$24, DW_AT_TI_max_frame_size(-2)
+     291                      .dwpsn  file "C:/ti/motorware/motorware_1_01_00_15/sw/drivers/timer/src/32b/f28x/f2802x/timer.c",line
+     292              
+     293                      .dwfde $C$DW$CIE, _TIMER_getStatus
+     294              $C$DW$25        .dwtag  DW_TAG_formal_parameter, DW_AT_name("timerHandle")
+     295                      .dwattr $C$DW$25, DW_AT_TI_symbol_name("_timerHandle")
+     296                      .dwattr $C$DW$25, DW_AT_type(*$C$DW$T$27)
+     297                      .dwattr $C$DW$25, DW_AT_location[DW_OP_reg12]
+     298              
+     299              ;***************************************************************
+     300              ;* FNAME: _TIMER_getStatus              FR SIZE:   0           *
+     301              ;*                                                             *
+     302              ;* FUNCTION ENVIRONMENT                                        *
+     303              ;*                                                             *
+     304              ;* FUNCTION PROPERTIES                                         *
+     305              ;*                            0 Parameter,  0 Auto,  0 SOE     *
+     306              ;***************************************************************
+     307              
+     308              _TIMER_getStatus:
+     309              ;* AR4   assigned to _timerHandle
+     310              $C$DW$26        .dwtag  DW_TAG_variable, DW_AT_name("timerHandle")
+     311                      .dwattr $C$DW$26, DW_AT_TI_symbol_name("_timerHandle")
+     312                      .dwattr $C$DW$26, DW_AT_type(*$C$DW$T$34)
+     313                      .dwattr $C$DW$26, DW_AT_location[DW_OP_reg12]
+     314              ;* AL    assigned to _status
+     315              $C$DW$27        .dwtag  DW_TAG_variable, DW_AT_name("status")
+     316                      .dwattr $C$DW$27, DW_AT_TI_symbol_name("_status")
+     317                      .dwattr $C$DW$27, DW_AT_type(*$C$DW$T$25)
+     318                      .dwattr $C$DW$27, DW_AT_location[DW_OP_reg0]
+     319                      .dwcfi  cfa_offset, -2
+     320                      .dwcfi  save_reg_to_mem, 26, 0
+     321                      .dwpsn  file "C:/ti/motorware/motorware_1_01_00_15/sw/drivers/timer/src/32b/f28x/f2802x/timer.c",line
+     322 00000027 CCE4          AND       AL,*+XAR4[4],#0x8000  ; [CPU_] |97| 
+TMS320C2000 Assembler PC v6.4.9 Wed Dec 02 15:59:09 2015
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\ywcheng\AppData\Local\Temp\1188010                          PAGE    7
+
+         00000028 8000 
+     323              $C$DW$28        .dwtag  DW_TAG_TI_branch
+     324                      .dwattr $C$DW$28, DW_AT_low_pc(0x00)
+     325                      .dwattr $C$DW$28, DW_AT_TI_return
+     326 00000029 0006          LRETR     ; [CPU_] 
+     327                      ; return occurs ; [] 
+     328                      .dwattr $C$DW$24, DW_AT_TI_end_file("C:/ti/motorware/motorware_1_01_00_15/sw/drivers/timer/src/32b/f2
+     329                      .dwattr $C$DW$24, DW_AT_TI_end_line(0x64)
+     330                      .dwattr $C$DW$24, DW_AT_TI_end_column(0x01)
+     331                      .dwendentry
+     332                      .dwendtag $C$DW$24
+     333              
+     334 0000002a               .sect   ".text"
+     335                      .clink
+     336                      .global _TIMER_enableInt
+     337              
+     338              $C$DW$29        .dwtag  DW_TAG_subprogram, DW_AT_name("TIMER_enableInt")
+     339                      .dwattr $C$DW$29, DW_AT_low_pc(_TIMER_enableInt)
+     340                      .dwattr $C$DW$29, DW_AT_high_pc(0x00)
+     341                      .dwattr $C$DW$29, DW_AT_TI_symbol_name("_TIMER_enableInt")
+     342                      .dwattr $C$DW$29, DW_AT_external
+     343                      .dwattr $C$DW$29, DW_AT_TI_begin_file("C:/ti/motorware/motorware_1_01_00_15/sw/drivers/timer/src/32b/
+     344                      .dwattr $C$DW$29, DW_AT_TI_begin_line(0x4f)
+     345                      .dwattr $C$DW$29, DW_AT_TI_begin_column(0x06)
+     346                      .dwattr $C$DW$29, DW_AT_TI_max_frame_size(-2)
+     347                      .dwpsn  file "C:/ti/motorware/motorware_1_01_00_15/sw/drivers/timer/src/32b/f28x/f2802x/timer.c",line
+     348              
+     349                      .dwfde $C$DW$CIE, _TIMER_enableInt
+     350              $C$DW$30        .dwtag  DW_TAG_formal_parameter, DW_AT_name("timerHandle")
+     351                      .dwattr $C$DW$30, DW_AT_TI_symbol_name("_timerHandle")
+     352                      .dwattr $C$DW$30, DW_AT_type(*$C$DW$T$27)
+     353                      .dwattr $C$DW$30, DW_AT_location[DW_OP_reg12]
+     354              
+     355              ;***************************************************************
+     356              ;* FNAME: _TIMER_enableInt              FR SIZE:   0           *
+     357              ;*                                                             *
+     358              ;* FUNCTION ENVIRONMENT                                        *
+     359              ;*                                                             *
+     360              ;* FUNCTION PROPERTIES                                         *
+     361              ;*                            0 Parameter,  0 Auto,  0 SOE     *
+     362              ;***************************************************************
+     363              
+     364              _TIMER_enableInt:
+     365              ;* AR4   assigned to _timerHandle
+     366              $C$DW$31        .dwtag  DW_TAG_variable, DW_AT_name("timerHandle")
+     367                      .dwattr $C$DW$31, DW_AT_TI_symbol_name("_timerHandle")
+     368                      .dwattr $C$DW$31, DW_AT_type(*$C$DW$T$34)
+     369                      .dwattr $C$DW$31, DW_AT_location[DW_OP_reg12]
+     370                      .dwcfi  cfa_offset, -2
+     371                      .dwcfi  save_reg_to_mem, 26, 0
+     372                      .dwpsn  file "C:/ti/motorware/motorware_1_01_00_15/sw/drivers/timer/src/32b/f28x/f2802x/timer.c",line
+     373 0000002a 1AE4          OR        *+XAR4[4],#0x4000     ; [CPU_] |85| 
+         0000002b 4000 
+     374              $C$DW$32        .dwtag  DW_TAG_TI_branch
+     375                      .dwattr $C$DW$32, DW_AT_low_pc(0x00)
+TMS320C2000 Assembler PC v6.4.9 Wed Dec 02 15:59:09 2015
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\ywcheng\AppData\Local\Temp\1188010                          PAGE    8
+
+     376                      .dwattr $C$DW$32, DW_AT_TI_return
+     377 0000002c 0006          LRETR     ; [CPU_] 
+     378                      ; return occurs ; [] 
+     379                      .dwattr $C$DW$29, DW_AT_TI_end_file("C:/ti/motorware/motorware_1_01_00_15/sw/drivers/timer/src/32b/f2
+     380                      .dwattr $C$DW$29, DW_AT_TI_end_line(0x58)
+     381                      .dwattr $C$DW$29, DW_AT_TI_end_column(0x01)
+     382                      .dwendentry
+     383                      .dwendtag $C$DW$29
+     384              
+     385 0000002d               .sect   ".text"
+     386                      .clink
+     387                      .global _TIMER_disableInt
+     388              
+     389              $C$DW$33        .dwtag  DW_TAG_subprogram, DW_AT_name("TIMER_disableInt")
+     390                      .dwattr $C$DW$33, DW_AT_low_pc(_TIMER_disableInt)
+     391                      .dwattr $C$DW$33, DW_AT_high_pc(0x00)
+     392                      .dwattr $C$DW$33, DW_AT_TI_symbol_name("_TIMER_disableInt")
+     393                      .dwattr $C$DW$33, DW_AT_external
+     394                      .dwattr $C$DW$33, DW_AT_TI_begin_file("C:/ti/motorware/motorware_1_01_00_15/sw/drivers/timer/src/32b/
+     395                      .dwattr $C$DW$33, DW_AT_TI_begin_line(0x43)
+     396                      .dwattr $C$DW$33, DW_AT_TI_begin_column(0x06)
+     397                      .dwattr $C$DW$33, DW_AT_TI_max_frame_size(-2)
+     398                      .dwpsn  file "C:/ti/motorware/motorware_1_01_00_15/sw/drivers/timer/src/32b/f28x/f2802x/timer.c",line
+     399              
+     400                      .dwfde $C$DW$CIE, _TIMER_disableInt
+     401              $C$DW$34        .dwtag  DW_TAG_formal_parameter, DW_AT_name("timerHandle")
+     402                      .dwattr $C$DW$34, DW_AT_TI_symbol_name("_timerHandle")
+     403                      .dwattr $C$DW$34, DW_AT_type(*$C$DW$T$27)
+     404                      .dwattr $C$DW$34, DW_AT_location[DW_OP_reg12]
+     405              
+     406              ;***************************************************************
+     407              ;* FNAME: _TIMER_disableInt             FR SIZE:   0           *
+     408              ;*                                                             *
+     409              ;* FUNCTION ENVIRONMENT                                        *
+     410              ;*                                                             *
+     411              ;* FUNCTION PROPERTIES                                         *
+     412              ;*                            0 Parameter,  0 Auto,  0 SOE     *
+     413              ;***************************************************************
+     414              
+     415              _TIMER_disableInt:
+     416              ;* AR4   assigned to _timerHandle
+     417              $C$DW$35        .dwtag  DW_TAG_variable, DW_AT_name("timerHandle")
+     418                      .dwattr $C$DW$35, DW_AT_TI_symbol_name("_timerHandle")
+     419                      .dwattr $C$DW$35, DW_AT_type(*$C$DW$T$34)
+     420                      .dwattr $C$DW$35, DW_AT_location[DW_OP_reg12]
+     421                      .dwcfi  cfa_offset, -2
+     422                      .dwcfi  save_reg_to_mem, 26, 0
+     423                      .dwpsn  file "C:/ti/motorware/motorware_1_01_00_15/sw/drivers/timer/src/32b/f28x/f2802x/timer.c",line
+     424 0000002d 18E4          AND       *+XAR4[4],#0xbfff     ; [CPU_] |73| 
+         0000002e BFFF 
+     425              $C$DW$36        .dwtag  DW_TAG_TI_branch
+     426                      .dwattr $C$DW$36, DW_AT_low_pc(0x00)
+     427                      .dwattr $C$DW$36, DW_AT_TI_return
+     428 0000002f 0006          LRETR     ; [CPU_] 
+     429                      ; return occurs ; [] 
+TMS320C2000 Assembler PC v6.4.9 Wed Dec 02 15:59:09 2015
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\ywcheng\AppData\Local\Temp\1188010                          PAGE    9
+
+     430                      .dwattr $C$DW$33, DW_AT_TI_end_file("C:/ti/motorware/motorware_1_01_00_15/sw/drivers/timer/src/32b/f2
+     431                      .dwattr $C$DW$33, DW_AT_TI_end_line(0x4c)
+     432                      .dwattr $C$DW$33, DW_AT_TI_end_column(0x01)
+     433                      .dwendentry
+     434                      .dwendtag $C$DW$33
+     435              
+     436 00000030               .sect   ".text"
+     437                      .clink
+     438                      .global _TIMER_clearFlag
+     439              
+     440              $C$DW$37        .dwtag  DW_TAG_subprogram, DW_AT_name("TIMER_clearFlag")
+     441                      .dwattr $C$DW$37, DW_AT_low_pc(_TIMER_clearFlag)
+     442                      .dwattr $C$DW$37, DW_AT_high_pc(0x00)
+     443                      .dwattr $C$DW$37, DW_AT_TI_symbol_name("_TIMER_clearFlag")
+     444                      .dwattr $C$DW$37, DW_AT_external
+     445                      .dwattr $C$DW$37, DW_AT_TI_begin_file("C:/ti/motorware/motorware_1_01_00_15/sw/drivers/timer/src/32b/
+     446                      .dwattr $C$DW$37, DW_AT_TI_begin_line(0x37)
+     447                      .dwattr $C$DW$37, DW_AT_TI_begin_column(0x06)
+     448                      .dwattr $C$DW$37, DW_AT_TI_max_frame_size(-2)
+     449                      .dwpsn  file "C:/ti/motorware/motorware_1_01_00_15/sw/drivers/timer/src/32b/f28x/f2802x/timer.c",line
+     450              
+     451                      .dwfde $C$DW$CIE, _TIMER_clearFlag
+     452              $C$DW$38        .dwtag  DW_TAG_formal_parameter, DW_AT_name("timerHandle")
+     453                      .dwattr $C$DW$38, DW_AT_TI_symbol_name("_timerHandle")
+     454                      .dwattr $C$DW$38, DW_AT_type(*$C$DW$T$27)
+     455                      .dwattr $C$DW$38, DW_AT_location[DW_OP_reg12]
+     456              
+     457              ;***************************************************************
+     458              ;* FNAME: _TIMER_clearFlag              FR SIZE:   0           *
+     459              ;*                                                             *
+     460              ;* FUNCTION ENVIRONMENT                                        *
+     461              ;*                                                             *
+     462              ;* FUNCTION PROPERTIES                                         *
+     463              ;*                            0 Parameter,  0 Auto,  0 SOE     *
+     464              ;***************************************************************
+     465              
+     466              _TIMER_clearFlag:
+     467              ;* AR4   assigned to _timerHandle
+     468              $C$DW$39        .dwtag  DW_TAG_variable, DW_AT_name("timerHandle")
+     469                      .dwattr $C$DW$39, DW_AT_TI_symbol_name("_timerHandle")
+     470                      .dwattr $C$DW$39, DW_AT_type(*$C$DW$T$34)
+     471                      .dwattr $C$DW$39, DW_AT_location[DW_OP_reg12]
+     472                      .dwcfi  cfa_offset, -2
+     473                      .dwcfi  save_reg_to_mem, 26, 0
+     474                      .dwpsn  file "C:/ti/motorware/motorware_1_01_00_15/sw/drivers/timer/src/32b/f28x/f2802x/timer.c",line
+     475 00000030 1AE4          OR        *+XAR4[4],#0x8000     ; [CPU_] |61| 
+         00000031 8000 
+     476              $C$DW$40        .dwtag  DW_TAG_TI_branch
+     477                      .dwattr $C$DW$40, DW_AT_low_pc(0x00)
+     478                      .dwattr $C$DW$40, DW_AT_TI_return
+     479 00000032 0006          LRETR     ; [CPU_] 
+     480                      ; return occurs ; [] 
+     481                      .dwattr $C$DW$37, DW_AT_TI_end_file("C:/ti/motorware/motorware_1_01_00_15/sw/drivers/timer/src/32b/f2
+     482                      .dwattr $C$DW$37, DW_AT_TI_end_line(0x40)
+     483                      .dwattr $C$DW$37, DW_AT_TI_end_column(0x01)
+TMS320C2000 Assembler PC v6.4.9 Wed Dec 02 15:59:09 2015
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\ywcheng\AppData\Local\Temp\1188010                          PAGE   10
+
+     484                      .dwendentry
+     485                      .dwendtag $C$DW$37
+     486              
+     487              
+     488              ;***************************************************************
+     489              ;* TYPE INFORMATION                                            *
+     490              ;***************************************************************
+     491              
+     492              $C$DW$T$24      .dwtag  DW_TAG_enumeration_type
+     493                      .dwattr $C$DW$T$24, DW_AT_byte_size(0x01)
+     494              $C$DW$41        .dwtag  DW_TAG_enumerator, DW_AT_name("TIMER_Status_CntIsNotZero"), DW_AT_const_value(0x00)
+     495              $C$DW$42        .dwtag  DW_TAG_enumerator, DW_AT_name("TIMER_Status_CntIsZero"), DW_AT_const_value(-32768)
+     496                      .dwendtag $C$DW$T$24
+     497              
+     498              $C$DW$T$25      .dwtag  DW_TAG_typedef, DW_AT_name("TIMER_Status_e")
+     499                      .dwattr $C$DW$T$25, DW_AT_type(*$C$DW$T$24)
+     500                      .dwattr $C$DW$T$25, DW_AT_language(DW_LANG_C)
+     501              
+     502              $C$DW$T$30      .dwtag  DW_TAG_enumeration_type
+     503                      .dwattr $C$DW$T$30, DW_AT_byte_size(0x01)
+     504              $C$DW$43        .dwtag  DW_TAG_enumerator, DW_AT_name("TIMER_EmulationMode_StopAfterNextDecrement"), DW_AT_co
+     505              $C$DW$44        .dwtag  DW_TAG_enumerator, DW_AT_name("TIMER_EmulationMode_StopAtZero"), DW_AT_const_value(0x
+     506              $C$DW$45        .dwtag  DW_TAG_enumerator, DW_AT_name("TIMER_EmulationMode_RunFree"), DW_AT_const_value(0x800
+     507                      .dwendtag $C$DW$T$30
+     508              
+     509              $C$DW$T$31      .dwtag  DW_TAG_typedef, DW_AT_name("TIMER_EmulationMode_e")
+     510                      .dwattr $C$DW$T$31, DW_AT_type(*$C$DW$T$30)
+     511                      .dwattr $C$DW$T$31, DW_AT_language(DW_LANG_C)
+     512              $C$DW$46        .dwtag  DW_TAG_TI_far_type
+     513                      .dwattr $C$DW$46, DW_AT_type(*$C$DW$T$31)
+     514              $C$DW$T$32      .dwtag  DW_TAG_const_type
+     515                      .dwattr $C$DW$T$32, DW_AT_type(*$C$DW$46)
+     516              
+     517              $C$DW$T$23      .dwtag  DW_TAG_structure_type
+     518                      .dwattr $C$DW$T$23, DW_AT_name("_TIMER_Obj_")
+     519                      .dwattr $C$DW$T$23, DW_AT_byte_size(0x08)
+     520              $C$DW$47        .dwtag  DW_TAG_member
+     521                      .dwattr $C$DW$47, DW_AT_type(*$C$DW$T$20)
+     522                      .dwattr $C$DW$47, DW_AT_name("TIM")
+     523                      .dwattr $C$DW$47, DW_AT_TI_symbol_name("_TIM")
+     524                      .dwattr $C$DW$47, DW_AT_data_member_location[DW_OP_plus_uconst 0x0]
+     525                      .dwattr $C$DW$47, DW_AT_accessibility(DW_ACCESS_public)
+     526              $C$DW$48        .dwtag  DW_TAG_member
+     527                      .dwattr $C$DW$48, DW_AT_type(*$C$DW$T$20)
+     528                      .dwattr $C$DW$48, DW_AT_name("PRD")
+     529                      .dwattr $C$DW$48, DW_AT_TI_symbol_name("_PRD")
+     530                      .dwattr $C$DW$48, DW_AT_data_member_location[DW_OP_plus_uconst 0x2]
+     531                      .dwattr $C$DW$48, DW_AT_accessibility(DW_ACCESS_public)
+     532              $C$DW$49        .dwtag  DW_TAG_member
+     533                      .dwattr $C$DW$49, DW_AT_type(*$C$DW$T$22)
+     534                      .dwattr $C$DW$49, DW_AT_name("TCR")
+     535                      .dwattr $C$DW$49, DW_AT_TI_symbol_name("_TCR")
+     536                      .dwattr $C$DW$49, DW_AT_data_member_location[DW_OP_plus_uconst 0x4]
+     537                      .dwattr $C$DW$49, DW_AT_accessibility(DW_ACCESS_public)
+     538              $C$DW$50        .dwtag  DW_TAG_member
+TMS320C2000 Assembler PC v6.4.9 Wed Dec 02 15:59:09 2015
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\ywcheng\AppData\Local\Temp\1188010                          PAGE   11
+
+     539                      .dwattr $C$DW$50, DW_AT_type(*$C$DW$T$22)
+     540                      .dwattr $C$DW$50, DW_AT_name("resvd_1")
+     541                      .dwattr $C$DW$50, DW_AT_TI_symbol_name("_resvd_1")
+     542                      .dwattr $C$DW$50, DW_AT_data_member_location[DW_OP_plus_uconst 0x5]
+     543                      .dwattr $C$DW$50, DW_AT_accessibility(DW_ACCESS_public)
+     544              $C$DW$51        .dwtag  DW_TAG_member
+     545                      .dwattr $C$DW$51, DW_AT_type(*$C$DW$T$20)
+     546                      .dwattr $C$DW$51, DW_AT_name("TPR")
+     547                      .dwattr $C$DW$51, DW_AT_TI_symbol_name("_TPR")
+     548                      .dwattr $C$DW$51, DW_AT_data_member_location[DW_OP_plus_uconst 0x6]
+     549                      .dwattr $C$DW$51, DW_AT_accessibility(DW_ACCESS_public)
+     550                      .dwendtag $C$DW$T$23
+     551              
+     552              $C$DW$T$33      .dwtag  DW_TAG_typedef, DW_AT_name("TIMER_Obj")
+     553                      .dwattr $C$DW$T$33, DW_AT_type(*$C$DW$T$23)
+     554                      .dwattr $C$DW$T$33, DW_AT_language(DW_LANG_C)
+     555              $C$DW$T$26      .dwtag  DW_TAG_pointer_type
+     556                      .dwattr $C$DW$T$26, DW_AT_type(*$C$DW$T$23)
+     557                      .dwattr $C$DW$T$26, DW_AT_address_class(0x20)
+     558              $C$DW$T$27      .dwtag  DW_TAG_typedef, DW_AT_name("TIMER_Handle")
+     559                      .dwattr $C$DW$T$27, DW_AT_type(*$C$DW$T$26)
+     560                      .dwattr $C$DW$T$27, DW_AT_language(DW_LANG_C)
+     561              $C$DW$52        .dwtag  DW_TAG_TI_far_type
+     562                      .dwattr $C$DW$52, DW_AT_type(*$C$DW$T$27)
+     563              $C$DW$T$34      .dwtag  DW_TAG_const_type
+     564                      .dwattr $C$DW$T$34, DW_AT_type(*$C$DW$52)
+     565              $C$DW$T$2       .dwtag  DW_TAG_unspecified_type
+     566                      .dwattr $C$DW$T$2, DW_AT_name("void")
+     567              $C$DW$T$3       .dwtag  DW_TAG_pointer_type
+     568                      .dwattr $C$DW$T$3, DW_AT_type(*$C$DW$T$2)
+     569                      .dwattr $C$DW$T$3, DW_AT_address_class(0x20)
+     570              $C$DW$T$4       .dwtag  DW_TAG_base_type
+     571                      .dwattr $C$DW$T$4, DW_AT_encoding(DW_ATE_boolean)
+     572                      .dwattr $C$DW$T$4, DW_AT_name("bool")
+     573                      .dwattr $C$DW$T$4, DW_AT_byte_size(0x01)
+     574              $C$DW$T$5       .dwtag  DW_TAG_base_type
+     575                      .dwattr $C$DW$T$5, DW_AT_encoding(DW_ATE_signed_char)
+     576                      .dwattr $C$DW$T$5, DW_AT_name("signed char")
+     577                      .dwattr $C$DW$T$5, DW_AT_byte_size(0x01)
+     578              $C$DW$T$6       .dwtag  DW_TAG_base_type
+     579                      .dwattr $C$DW$T$6, DW_AT_encoding(DW_ATE_unsigned_char)
+     580                      .dwattr $C$DW$T$6, DW_AT_name("unsigned char")
+     581                      .dwattr $C$DW$T$6, DW_AT_byte_size(0x01)
+     582              $C$DW$T$7       .dwtag  DW_TAG_base_type
+     583                      .dwattr $C$DW$T$7, DW_AT_encoding(DW_ATE_signed_char)
+     584                      .dwattr $C$DW$T$7, DW_AT_name("wchar_t")
+     585                      .dwattr $C$DW$T$7, DW_AT_byte_size(0x01)
+     586              $C$DW$T$8       .dwtag  DW_TAG_base_type
+     587                      .dwattr $C$DW$T$8, DW_AT_encoding(DW_ATE_signed)
+     588                      .dwattr $C$DW$T$8, DW_AT_name("short")
+     589                      .dwattr $C$DW$T$8, DW_AT_byte_size(0x01)
+     590              $C$DW$T$9       .dwtag  DW_TAG_base_type
+     591                      .dwattr $C$DW$T$9, DW_AT_encoding(DW_ATE_unsigned)
+     592                      .dwattr $C$DW$T$9, DW_AT_name("unsigned short")
+     593                      .dwattr $C$DW$T$9, DW_AT_byte_size(0x01)
+TMS320C2000 Assembler PC v6.4.9 Wed Dec 02 15:59:09 2015
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\ywcheng\AppData\Local\Temp\1188010                          PAGE   12
+
+     594              $C$DW$T$10      .dwtag  DW_TAG_base_type
+     595                      .dwattr $C$DW$T$10, DW_AT_encoding(DW_ATE_signed)
+     596                      .dwattr $C$DW$T$10, DW_AT_name("int")
+     597                      .dwattr $C$DW$T$10, DW_AT_byte_size(0x01)
+     598              $C$DW$T$11      .dwtag  DW_TAG_base_type
+     599                      .dwattr $C$DW$T$11, DW_AT_encoding(DW_ATE_unsigned)
+     600                      .dwattr $C$DW$T$11, DW_AT_name("unsigned int")
+     601                      .dwattr $C$DW$T$11, DW_AT_byte_size(0x01)
+     602              $C$DW$T$21      .dwtag  DW_TAG_typedef, DW_AT_name("uint16_t")
+     603                      .dwattr $C$DW$T$21, DW_AT_type(*$C$DW$T$11)
+     604                      .dwattr $C$DW$T$21, DW_AT_language(DW_LANG_C)
+     605              $C$DW$53        .dwtag  DW_TAG_TI_far_type
+     606                      .dwattr $C$DW$53, DW_AT_type(*$C$DW$T$21)
+     607              $C$DW$T$22      .dwtag  DW_TAG_volatile_type
+     608                      .dwattr $C$DW$T$22, DW_AT_type(*$C$DW$53)
+     609              $C$DW$54        .dwtag  DW_TAG_TI_far_type
+     610                      .dwattr $C$DW$54, DW_AT_type(*$C$DW$T$21)
+     611              $C$DW$T$42      .dwtag  DW_TAG_const_type
+     612                      .dwattr $C$DW$T$42, DW_AT_type(*$C$DW$54)
+     613              $C$DW$T$12      .dwtag  DW_TAG_base_type
+     614                      .dwattr $C$DW$T$12, DW_AT_encoding(DW_ATE_signed)
+     615                      .dwattr $C$DW$T$12, DW_AT_name("long")
+     616                      .dwattr $C$DW$T$12, DW_AT_byte_size(0x02)
+     617              $C$DW$T$13      .dwtag  DW_TAG_base_type
+     618                      .dwattr $C$DW$T$13, DW_AT_encoding(DW_ATE_unsigned)
+     619                      .dwattr $C$DW$T$13, DW_AT_name("unsigned long")
+     620                      .dwattr $C$DW$T$13, DW_AT_byte_size(0x02)
+     621              $C$DW$T$35      .dwtag  DW_TAG_typedef, DW_AT_name("size_t")
+     622                      .dwattr $C$DW$T$35, DW_AT_type(*$C$DW$T$13)
+     623                      .dwattr $C$DW$T$35, DW_AT_language(DW_LANG_C)
+     624              $C$DW$55        .dwtag  DW_TAG_TI_far_type
+     625                      .dwattr $C$DW$55, DW_AT_type(*$C$DW$T$35)
+     626              $C$DW$T$36      .dwtag  DW_TAG_const_type
+     627                      .dwattr $C$DW$T$36, DW_AT_type(*$C$DW$55)
+     628              $C$DW$T$19      .dwtag  DW_TAG_typedef, DW_AT_name("uint32_t")
+     629                      .dwattr $C$DW$T$19, DW_AT_type(*$C$DW$T$13)
+     630                      .dwattr $C$DW$T$19, DW_AT_language(DW_LANG_C)
+     631              $C$DW$56        .dwtag  DW_TAG_TI_far_type
+     632                      .dwattr $C$DW$56, DW_AT_type(*$C$DW$T$19)
+     633              $C$DW$T$20      .dwtag  DW_TAG_volatile_type
+     634                      .dwattr $C$DW$T$20, DW_AT_type(*$C$DW$56)
+     635              $C$DW$T$14      .dwtag  DW_TAG_base_type
+     636                      .dwattr $C$DW$T$14, DW_AT_encoding(DW_ATE_signed)
+     637                      .dwattr $C$DW$T$14, DW_AT_name("long long")
+     638                      .dwattr $C$DW$T$14, DW_AT_byte_size(0x04)
+     639              $C$DW$T$15      .dwtag  DW_TAG_base_type
+     640                      .dwattr $C$DW$T$15, DW_AT_encoding(DW_ATE_unsigned)
+     641                      .dwattr $C$DW$T$15, DW_AT_name("unsigned long long")
+     642                      .dwattr $C$DW$T$15, DW_AT_byte_size(0x04)
+     643              $C$DW$T$16      .dwtag  DW_TAG_base_type
+     644                      .dwattr $C$DW$T$16, DW_AT_encoding(DW_ATE_float)
+     645                      .dwattr $C$DW$T$16, DW_AT_name("float")
+     646                      .dwattr $C$DW$T$16, DW_AT_byte_size(0x02)
+     647              $C$DW$T$17      .dwtag  DW_TAG_base_type
+     648                      .dwattr $C$DW$T$17, DW_AT_encoding(DW_ATE_float)
+TMS320C2000 Assembler PC v6.4.9 Wed Dec 02 15:59:09 2015
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\ywcheng\AppData\Local\Temp\1188010                          PAGE   13
+
+     649                      .dwattr $C$DW$T$17, DW_AT_name("double")
+     650                      .dwattr $C$DW$T$17, DW_AT_byte_size(0x02)
+     651              $C$DW$T$18      .dwtag  DW_TAG_base_type
+     652                      .dwattr $C$DW$T$18, DW_AT_encoding(DW_ATE_float)
+     653                      .dwattr $C$DW$T$18, DW_AT_name("long double")
+     654                      .dwattr $C$DW$T$18, DW_AT_byte_size(0x04)
+     655                      .dwattr $C$DW$CU, DW_AT_language(DW_LANG_C)
+     656              
+     657              ;***************************************************************
+     658              ;* DWARF CIE ENTRIES                                           *
+     659              ;***************************************************************
+     660              
+     661              $C$DW$CIE       .dwcie 26
+     662                      .dwcfi  cfa_register, 20
+     663                      .dwcfi  cfa_offset, 0
+     664                      .dwcfi  undefined, 0
+     665                      .dwcfi  undefined, 1
+     666                      .dwcfi  undefined, 2
+     667                      .dwcfi  undefined, 3
+     668                      .dwcfi  undefined, 20
+     669                      .dwcfi  undefined, 21
+     670                      .dwcfi  undefined, 22
+     671                      .dwcfi  undefined, 23
+     672                      .dwcfi  undefined, 24
+     673                      .dwcfi  undefined, 25
+     674                      .dwcfi  undefined, 26
+     675                      .dwcfi  same_value, 28
+     676                      .dwcfi  undefined, 29
+     677                      .dwcfi  undefined, 30
+     678                      .dwcfi  undefined, 31
+     679                      .dwcfi  undefined, 32
+     680                      .dwcfi  undefined, 33
+     681                      .dwcfi  undefined, 34
+     682                      .dwcfi  undefined, 35
+     683                      .dwcfi  undefined, 36
+     684                      .dwcfi  undefined, 37
+     685                      .dwcfi  undefined, 38
+     686                      .dwcfi  undefined, 75
+     687                      .dwcfi  undefined, 76
+     688                      .dwcfi  undefined, 77
+     689                      .dwcfi  undefined, 4
+     690                      .dwcfi  undefined, 5
+     691                      .dwcfi  same_value, 6
+     692                      .dwcfi  same_value, 7
+     693                      .dwcfi  same_value, 8
+     694                      .dwcfi  same_value, 9
+     695                      .dwcfi  same_value, 10
+     696                      .dwcfi  same_value, 11
+     697                      .dwcfi  undefined, 12
+     698                      .dwcfi  undefined, 13
+     699                      .dwcfi  undefined, 14
+     700                      .dwcfi  undefined, 15
+     701                      .dwcfi  undefined, 16
+     702                      .dwcfi  undefined, 17
+     703                      .dwcfi  undefined, 18
+TMS320C2000 Assembler PC v6.4.9 Wed Dec 02 15:59:09 2015
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\ywcheng\AppData\Local\Temp\1188010                          PAGE   14
+
+     704                      .dwcfi  undefined, 19
+     705                      .dwendentry
+     706              
+     707              ;***************************************************************
+     708              ;* DWARF REGISTER MAP                                          *
+     709              ;***************************************************************
+     710              
+     711              $C$DW$57        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AL")
+     712                      .dwattr $C$DW$57, DW_AT_location[DW_OP_reg0]
+     713              $C$DW$58        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AH")
+     714                      .dwattr $C$DW$58, DW_AT_location[DW_OP_reg1]
+     715              $C$DW$59        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("PL")
+     716                      .dwattr $C$DW$59, DW_AT_location[DW_OP_reg2]
+     717              $C$DW$60        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("PH")
+     718                      .dwattr $C$DW$60, DW_AT_location[DW_OP_reg3]
+     719              $C$DW$61        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("SP")
+     720                      .dwattr $C$DW$61, DW_AT_location[DW_OP_reg20]
+     721              $C$DW$62        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("XT")
+     722                      .dwattr $C$DW$62, DW_AT_location[DW_OP_reg21]
+     723              $C$DW$63        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("T")
+     724                      .dwattr $C$DW$63, DW_AT_location[DW_OP_reg22]
+     725              $C$DW$64        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("ST0")
+     726                      .dwattr $C$DW$64, DW_AT_location[DW_OP_reg23]
+     727              $C$DW$65        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("ST1")
+     728                      .dwattr $C$DW$65, DW_AT_location[DW_OP_reg24]
+     729              $C$DW$66        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("PC")
+     730                      .dwattr $C$DW$66, DW_AT_location[DW_OP_reg25]
+     731              $C$DW$67        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("RPC")
+     732                      .dwattr $C$DW$67, DW_AT_location[DW_OP_reg26]
+     733              $C$DW$68        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("FP")
+     734                      .dwattr $C$DW$68, DW_AT_location[DW_OP_reg28]
+     735              $C$DW$69        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("DP")
+     736                      .dwattr $C$DW$69, DW_AT_location[DW_OP_reg29]
+     737              $C$DW$70        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("SXM")
+     738                      .dwattr $C$DW$70, DW_AT_location[DW_OP_reg30]
+     739              $C$DW$71        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("PM")
+     740                      .dwattr $C$DW$71, DW_AT_location[DW_OP_reg31]
+     741              $C$DW$72        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("OVM")
+     742                      .dwattr $C$DW$72, DW_AT_location[DW_OP_regx 0x20]
+     743              $C$DW$73        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("PAGE0")
+     744                      .dwattr $C$DW$73, DW_AT_location[DW_OP_regx 0x21]
+     745              $C$DW$74        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AMODE")
+     746                      .dwattr $C$DW$74, DW_AT_location[DW_OP_regx 0x22]
+     747              $C$DW$75        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("INTM")
+     748                      .dwattr $C$DW$75, DW_AT_location[DW_OP_regx 0x23]
+     749              $C$DW$76        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("IFR")
+     750                      .dwattr $C$DW$76, DW_AT_location[DW_OP_regx 0x24]
+     751              $C$DW$77        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("IER")
+     752                      .dwattr $C$DW$77, DW_AT_location[DW_OP_regx 0x25]
+     753              $C$DW$78        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("V")
+     754                      .dwattr $C$DW$78, DW_AT_location[DW_OP_regx 0x26]
+     755              $C$DW$79        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("PSEUDOH")
+     756                      .dwattr $C$DW$79, DW_AT_location[DW_OP_regx 0x4c]
+     757              $C$DW$80        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("VOL")
+     758                      .dwattr $C$DW$80, DW_AT_location[DW_OP_regx 0x4d]
+TMS320C2000 Assembler PC v6.4.9 Wed Dec 02 15:59:09 2015
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+C:\Users\ywcheng\AppData\Local\Temp\1188010                          PAGE   15
+
+     759              $C$DW$81        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AR0")
+     760                      .dwattr $C$DW$81, DW_AT_location[DW_OP_reg4]
+     761              $C$DW$82        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("XAR0")
+     762                      .dwattr $C$DW$82, DW_AT_location[DW_OP_reg5]
+     763              $C$DW$83        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AR1")
+     764                      .dwattr $C$DW$83, DW_AT_location[DW_OP_reg6]
+     765              $C$DW$84        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("XAR1")
+     766                      .dwattr $C$DW$84, DW_AT_location[DW_OP_reg7]
+     767              $C$DW$85        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AR2")
+     768                      .dwattr $C$DW$85, DW_AT_location[DW_OP_reg8]
+     769              $C$DW$86        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("XAR2")
+     770                      .dwattr $C$DW$86, DW_AT_location[DW_OP_reg9]
+     771              $C$DW$87        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AR3")
+     772                      .dwattr $C$DW$87, DW_AT_location[DW_OP_reg10]
+     773              $C$DW$88        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("XAR3")
+     774                      .dwattr $C$DW$88, DW_AT_location[DW_OP_reg11]
+     775              $C$DW$89        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AR4")
+     776                      .dwattr $C$DW$89, DW_AT_location[DW_OP_reg12]
+     777              $C$DW$90        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("XAR4")
+     778                      .dwattr $C$DW$90, DW_AT_location[DW_OP_reg13]
+     779              $C$DW$91        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AR5")
+     780                      .dwattr $C$DW$91, DW_AT_location[DW_OP_reg14]
+     781              $C$DW$92        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("XAR5")
+     782                      .dwattr $C$DW$92, DW_AT_location[DW_OP_reg15]
+     783              $C$DW$93        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AR6")
+     784                      .dwattr $C$DW$93, DW_AT_location[DW_OP_reg16]
+     785              $C$DW$94        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("XAR6")
+     786                      .dwattr $C$DW$94, DW_AT_location[DW_OP_reg17]
+     787              $C$DW$95        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("AR7")
+     788                      .dwattr $C$DW$95, DW_AT_location[DW_OP_reg18]
+     789              $C$DW$96        .dwtag  DW_TAG_TI_assign_register, DW_AT_name("XAR7")
+     790                      .dwattr $C$DW$96, DW_AT_location[DW_OP_reg19]
+     791                      .dwendtag $C$DW$CU
+     792              
+
+No Assembly Errors, No Assembly Warnings

@@ -336,7 +336,7 @@ extern "C" {
 // BLDC & SMPM motors
 #define Estun_EMJ_04APB22           101
 #define Anaheim_BLY172S             102
-#define My_Motor                    104
+#define My_Motor                    113
 
 // IPM motors
 // If user provides separate Ls-d, Ls-q
@@ -413,6 +413,34 @@ extern "C" {
 #define USER_MOTOR_IND_EST_CURRENT      (-0.5)
 #define USER_MOTOR_MAX_CURRENT          (20.0)
 #define USER_MOTOR_FLUX_EST_FREQ_Hz     (20.0)
+
+#elif (USER_MOTOR == Undefined_PM_Placeholder)
+#define USER_MOTOR_TYPE                 MOTOR_Type_Pm
+#define USER_MOTOR_NUM_POLE_PAIRS       (4)
+#define USER_MOTOR_Rr                   (NULL)
+#define USER_MOTOR_Rs                   (NULL)
+#define USER_MOTOR_Ls_d                 (NULL)
+#define USER_MOTOR_Ls_q                 (NULL)
+#define USER_MOTOR_RATED_FLUX           (NULL)
+#define USER_MOTOR_MAGNETIZING_CURRENT  (NULL)
+#define USER_MOTOR_RES_EST_CURRENT      (1.0)
+#define USER_MOTOR_IND_EST_CURRENT      (-1.0)
+#define USER_MOTOR_MAX_CURRENT          (3.0)
+#define USER_MOTOR_FLUX_EST_FREQ_Hz     (20.0)
+
+#elif (USER_MOTOR == ACIM)
+#define USER_MOTOR_TYPE                 MOTOR_Type_Induction
+#define USER_MOTOR_NUM_POLE_PAIRS       (4)
+#define USER_MOTOR_Rr                   (NULL)
+#define USER_MOTOR_Rs                   (NULL)
+#define USER_MOTOR_Ls_d                 (NULL)
+#define USER_MOTOR_Ls_q                 (NULL)
+#define USER_MOTOR_RATED_FLUX           (0.8165*220.0/60.0)
+#define USER_MOTOR_MAGNETIZING_CURRENT  (NULL)
+#define USER_MOTOR_RES_EST_CURRENT      (1.0)
+#define USER_MOTOR_IND_EST_CURRENT      (NULL)
+#define USER_MOTOR_MAX_CURRENT          (3.0)
+#define USER_MOTOR_FLUX_EST_FREQ_Hz     (5.0)
 
 #elif (USER_MOTOR == Belt_Drive_Washer_IPM)
 #define USER_MOTOR_TYPE                 MOTOR_Type_Pm
